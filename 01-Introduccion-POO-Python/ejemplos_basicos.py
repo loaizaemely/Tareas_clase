@@ -16,11 +16,11 @@ print("\n1. CREACIÓN DE UNA CLASE Y OBJETOS")
 print("-" * 40)
 
 class Persona:
-    def __init__(self, nombre, edad):
+    def __init__(self, nombre:str, edad:int):
         self.nombre = nombre
         self.edad = edad
 
-    def saludar(self):
+    def saludar(self) -> str:
         return f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años."
 
 # Crear objetos
@@ -37,21 +37,21 @@ print("\n2. ENCAPSULACIÓN")
 print("-" * 40)
 
 class CuentaBancaria:
-    def __init__(self, titular, saldo):
+    def __init__(self, titular:str, saldo:float):
         self.titular = titular
         self.__saldo = saldo  # Atributo privado
 
-    def depositar(self, cantidad):
+    def depositar(self, cantidad:int) -> None:
         self.__saldo += cantidad
 
-    def retirar(self, cantidad):
+    def retirar(self, cantidad:int) -> str:
         if cantidad <= self.__saldo:
             self.__saldo -= cantidad
             return f"Retiro exitoso de ${cantidad}"
         else:
             return "Fondos insuficientes"
 
-    def mostrar_saldo(self):
+    def mostrar_saldo(self) -> str:
         return f"Saldo actual: ${self.__saldo}"
 
 # Crear y usar cuenta bancaria
@@ -70,18 +70,18 @@ print("\n3. HERENCIA")
 print("-" * 40)
 
 class Animal:
-    def __init__(self, nombre):
+    def __init__(self, nombre:str):
         self.nombre = nombre
 
-    def hacer_sonido(self):
+    def hacer_sonido(self) -> str:
         return "Hace un sonido."
 
 class Perro(Animal):
-    def hacer_sonido(self):
+    def hacer_sonido(self) -> str:
         return "Guau 🐶"
 
 class Gato(Animal):
-    def hacer_sonido(self):
+    def hacer_sonido(self) -> str:
         return "Miau 🐱"
 
 # Crear instancias
@@ -110,19 +110,19 @@ print("\n5. SISTEMA COMPLETO DE VEHÍCULOS")
 print("-" * 40)
 
 class Vehiculo:
-    def __init__(self, marca, modelo):
+    def __init__(self, marca:str, modelo:str):
         self.marca = marca
         self.modelo = modelo
 
-    def descripcion(self):
+    def descripcion(self) -> str:
         return f"{self.marca} {self.modelo}"
 
 class Carro(Vehiculo):
-    def descripcion(self):
+    def descripcion(self)-> str:
         return f"Carro: {self.marca} {self.modelo}"
 
 class Moto(Vehiculo):
-    def descripcion(self):
+    def descripcion(self) -> str:
         return f"Moto: {self.marca} {self.modelo}"
 
 # Crear vehículos
